@@ -1,7 +1,7 @@
 # Dorkinho 🔵
 The author is not responsible for misuse of the tool, use it in good practices like Pentest and CTF OSINT challenges.
 
-![](https://gcdn.pbrd.co/images/IzftDpnwVkq5.png)
+![](https://i.imgur.com/xi2UKOE.png)
 
 Dorkinho is a script to list and open dorks in the browser in a fast way, the script open a lot of web pages with dork search, so pay attention in the hardware usage.
 
