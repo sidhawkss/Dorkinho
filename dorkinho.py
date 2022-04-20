@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# By sidhawks
 import json
 import webbrowser
 import sys
