@@ -63,6 +63,6 @@ if __name__ == "__main__":
    
    Options:
             list_dorks                           #List all dorks names. 
-            all_dorks_request URL                #Open the browser with all dorks.
+            all_requests URL                #Open the browser with all dorks.
             select_dork NAME URL_PARAMETER       #Create one dork.
       """)
