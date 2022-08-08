@@ -3,6 +3,7 @@
 import json
 import webbrowser
 import sys
+import requests
 
 chrome_path = 'C:\Program Files\Google\Chrome\Application\chrome.exe %s'
 
@@ -25,24 +26,26 @@ def select_dork(name_dork, url):
             print(str(file[names[counter]]).format(url))
          counter += 1
 
-def all_dorks_request(url):
+def all_requests(url):
    with open("./dorks.json","r") as file:
       counter = 0
       file = json.load(file)
       names = (list(file.keys()))
       while counter < len(names):
-         print(str(file[names[counter]]).format(url))
          req = str(file[names[counter]]).format(url)
-
-         webbrowser.open(req)
+         req_vrfy = requests.get(req)
+         if(len(req_vrfy.text) > 4000):
+            print(req)
+            webbrowser.open(req)
+         req_vrfy.close()
          counter += 1
 
 if __name__ == "__main__":
    try:
       if str(sys.argv[1]) == "list_dorks":
          list_dorks()
-      if str(sys.argv[1]) == "all_dorks_request":
-         all_dorks_request(str(sys.argv[2]))
+      if str(sys.argv[1]) == "all_requests":
+         all_requests(str(sys.argv[2]))
       if str(sys.argv[1]) == "select_dork":
          select_dork(str(sys.argv[2]), str(sys.argv[3]))
    except:
@@ -59,10 +62,7 @@ if __name__ == "__main__":
    [*] The usage of the program is: python dorkinho.py OPTION
    
    Options:
-            list_dorks                           #List all dorks name. 
+            list_dorks                           #List all dorks names. 
             all_dorks_request URL                #Open the browser with all dorks.
             select_dork NAME URL_PARAMETER       #Create one dork.
       """)
-
-
-
