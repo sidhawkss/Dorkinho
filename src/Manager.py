@@ -31,6 +31,7 @@ class Dorkinho(argparse.Action):
          f_url = str(self.dorks_file[names[counter]]).format(domain)
          self.driver.execute_script(f"window.open('{f_url}');")
          counter += 1
+      self.driver.execute_script("window.close();")
 
    def close_pages(self):
       counter = 0

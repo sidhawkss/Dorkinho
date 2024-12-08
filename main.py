@@ -9,7 +9,7 @@ parser.add_argument("-e", "--exc", action="store_true", help="use an exclusive d
 args = parser.parse_args()
 
 if __name__ == "__main__":
-        dorkinho =  Dorkinho()
+        dorkinho = Dorkinho()
         print(args.domain)
         if(args.list):
                 dorkinho.list_dorks()
